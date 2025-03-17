@@ -1,0 +1,30 @@
+package Principal;
+
+import java.util.Scanner;
+
+import Coordenada.Coordenada;
+import Reactangulo.Rectangulo;
+
+//Clase Principal que ejecuta la lógica del programa
+public class Principal {
+ public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+
+     System.out.print("Ingrese x1 y y1 de la primera esquina: ");
+     double x1 = sc.nextDouble();
+     double y1 = sc.nextDouble();
+
+     System.out.print("Ingrese x2 y y2 de la esquina opuesta: ");
+     double x2 = sc.nextDouble();
+     double y2 = sc.nextDouble();
+
+     // Creación del rectángulo
+     Rectangulo rect = new Rectangulo(new Coordenada(x1, y1), new Coordenada(x2, y2));
+
+     // Mostrar los datos del rectángulo
+     System.out.println("Rectángulo creado: " + rect);
+     System.out.println("Área del rectángulo: " + rect.calcularArea());
+
+     sc.close();
+ }
+}
