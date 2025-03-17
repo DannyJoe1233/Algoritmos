@@ -1,0 +1,32 @@
+package Reactangulo;
+
+import Coordenada.Coordenada;
+
+//Clase Rectangulo: Representa un rectángulo definido por dos coordenadas opuestas
+public class Rectangulo {
+ private Coordenada esquina1;
+ private Coordenada esquina2;
+
+ // Constructor
+ public Rectangulo(Coordenada c1, Coordenada c2) {
+     this.esquina1 = c1;
+     this.esquina2 = c2;
+ }
+
+ // Métodos getter
+ public Coordenada getEsquina1() { return esquina1; }
+ public Coordenada getEsquina2() { return esquina2; }
+
+ // Método que calcula el área del rectángulo
+ public double calcularArea() {
+     double ancho = Math.abs(esquina1.getX() - esquina2.getX());
+     double alto = Math.abs(esquina1.getY() - esquina2.getY());
+     return ancho * alto;
+ }
+
+ // Método que devuelve los valores del rectángulo en formato legible
+ @Override
+ public String toString() {
+     return "[" + esquina1 + ", " + esquina2 + "]";
+ }
+}
